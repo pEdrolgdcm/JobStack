@@ -1,0 +1,17 @@
+﻿<Application x:Class="JobStack.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:JobStack"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- DEFININDO O ICONE DO SISTEMA -->
+        <BitmapImage x:Key="AppIcon" UriSource="Icones/logo-jobstack-icon.ico" />
+        <Style x:Key="tituloText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Century Gothic" />
+        </Style>
+
+    </Application.Resources>
+</Application>

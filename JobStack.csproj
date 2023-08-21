@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06B69426-C5F9-403C-A445-87A6FFB3868E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JobStack</RootNamespace>
+    <AssemblyName>JobStack</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo-jobstack-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BackEnd\Usuarios\Admin.cs" />
+    <Compile Include="BackEnd\Usuarios\Aluno.cs" />
+    <Compile Include="DesignCandidatoSelecionado.xaml.cs">
+      <DependentUpon>DesignCandidatoSelecionado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignListaAluno_Coordenador.xaml.cs">
+      <DependentUpon>DesignListaAluno_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignUsuarioAluno_Coordenador.xaml.cs">
+      <DependentUpon>DesignUsuarioAluno_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignUsuarioEmpresa_Coordenador.xaml.cs">
+      <DependentUpon>DesignUsuarioEmpresa_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignUsuarioInscrito.xaml.cs">
+      <DependentUpon>DesignUsuarioInscrito.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignVagaLista_Coordenador.xaml.cs">
+      <DependentUpon>DesignVagaLista_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExibirPerfilAluno_Coordenador2.xaml.cs">
+      <DependentUpon>ExibirPerfilAluno_Coordenador2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificacaoAtencao.xaml.cs">
+      <DependentUpon>NotificacaoAtencao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificacaoErro.xaml.cs">
+      <DependentUpon>NotificacaoErro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificacaoSucesso.xaml.cs">
+      <DependentUpon>NotificacaoSucesso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SemAlunos.xaml.cs">
+      <DependentUpon>SemAlunos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TAlterarSenha.xaml.cs">
+      <DependentUpon>TAlterarSenha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TAlunosCoordenador.xaml.cs">
+      <DependentUpon>TAlunosCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEditarPerfilAluno_Coordenador.xaml.cs">
+      <DependentUpon>TEditarPerfilAluno_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEditarPerfilEmpresa_Coordenador.xaml.cs">
+      <DependentUpon>TEditarPerfilEmpresa_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEditarVaga.xaml.cs">
+      <DependentUpon>TEditarVaga.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TEmpresasCoordenador.xaml.cs">
+      <DependentUpon>TEmpresasCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teste\TesteCadastrarEmpresa.xaml.cs">
+      <DependentUpon>TesteCadastrarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teste\TesteNotificacoes.xaml.cs">
+      <DependentUpon>TesteNotificacoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirPerfilAluno.xaml.cs">
+      <DependentUpon>TExibirPerfilAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirPerfilAluno_Coordenador.xaml.cs">
+      <DependentUpon>TExibirPerfilAluno_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirPerfilEmpresa.xaml.cs">
+      <DependentUpon>TExibirPerfilEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirPerfilEmpresa_Coordenador.xaml.cs">
+      <DependentUpon>TExibirPerfilEmpresa_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirVagaFinalizada.xaml.cs">
+      <DependentUpon>TExibirVagaFinalizada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TFormAlunoCoordenador.xaml.cs">
+      <DependentUpon>TFormAlunoCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TFormEmpresaCoordenador.xaml.cs">
+      <DependentUpon>TFormEmpresaCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TFormInfoEmpresa.xaml.cs">
+      <DependentUpon>TFormInfoEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TGerarSenhaADM.xaml.cs">
+      <DependentUpon>TGerarSenhaADM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TPerfilAluno.xaml.cs">
+      <DependentUpon>TPerfilAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TPerfilEmpresa.xaml.cs">
+      <DependentUpon>TPerfilEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\Vaga.cs" />
+    <Compile Include="BackEnd\Usuarios\Coordenador.cs" />
+    <Compile Include="BackEnd\Usuarios\Empresa.cs" />
+    <Compile Include="BackEnd\Usuarios\Usuario.cs" />
+    <Compile Include="ChatFiller.xaml.cs">
+      <DependentUpon>ChatFiller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignExibiçãoUsuario.xaml.cs">
+      <DependentUpon>DesignExibiçãoUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignVagaInscrita.xaml .cs" />
+    <Compile Include="DesignVagaCoordenador.xaml.cs">
+      <DependentUpon>DesignVagaCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignVaga_Empresa.xaml.cs">
+      <DependentUpon>DesignVaga_Empresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SemVagas.xaml.cs">
+      <DependentUpon>SemVagas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TAdmin.xaml.cs">
+      <DependentUpon>TAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TBatePapo.xaml.cs">
+      <DependentUpon>TBatePapo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TCadastrarUsuarioAdm.xaml.cs">
+      <DependentUpon>TCadastrarUsuarioAdm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TCadastrarVagaEmpresa.xaml.cs">
+      <DependentUpon>TCadastrarVagaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teste\TesteCadastrarAluno.xaml.cs">
+      <DependentUpon>TesteCadastrarAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teste\TesteImagem.xaml.cs">
+      <DependentUpon>TesteImagem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TesteLogin.xaml.cs">
+      <DependentUpon>TesteLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TExibirUsuários.xaml.cs">
+      <DependentUpon>TExibirUsuários.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TFormCurriculoAluno.xaml.cs">
+      <DependentUpon>TFormCurriculoAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="THistoricoVagasEmpresa.xaml.cs">
+      <DependentUpon>THistoricoVagasEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TMenuAdministrador.xaml.cs">
+      <DependentUpon>TMenuAdministrador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TMenuAluno.xaml.cs">
+      <DependentUpon>TMenuAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TMenuCoordenador.xaml.cs">
+      <DependentUpon>TMenuCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TMenuEmpresa.xaml.cs">
+      <DependentUpon>TMenuEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TMinhasInscricoesAluno.xaml.cs">
+      <DependentUpon>TMinhasInscricoesAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TPesquisarAluno.xaml.cs">
+      <DependentUpon>TPesquisarAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TSolicitacoesVagasCoordenador.xaml.cs">
+      <DependentUpon>TSolicitacoesVagasCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagaCompletaAluno.xaml.cs">
+      <DependentUpon>TVagaCompletaAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagaCompletaCoordenador.xaml.cs">
+      <DependentUpon>TVagaCompletaCoordenador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagaCompletaEmpresa.xaml.cs">
+      <DependentUpon>TVagaCompletaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagasEmAberto.xaml.cs">
+      <DependentUpon>TVagasEmAberto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagasEmpresa.xaml.cs">
+      <DependentUpon>TVagasEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagasFinalizadasEmpresa.xaml.cs">
+      <DependentUpon>TVagasFinalizadasEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TVagasPendentesEmpresa.xaml.cs">
+      <DependentUpon>TVagasPendentesEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VagaCompleta_Coordenador.xaml.cs">
+      <DependentUpon>VagaCompleta_Coordenador.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BatePapo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChatFiller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contato.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignCandidatoSelecionado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignExibiçãoUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignListaAluno_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignUsuarioAluno_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignUsuarioEmpresa_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignUsuarioInscrito.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignVagaLista_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExibirPerfilAluno_Coordenador2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificacaoAtencao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificacaoErro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificacaoSucesso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SemAlunos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TAlterarSenha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TAlunosCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEditarPerfilAluno_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEditarPerfilEmpresa_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEditarVaga.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEmpresasCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teste\TesteCadastrarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignVagaInscrita.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignVaga.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignVagaCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DesignVaga_Empresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BackEnd\Chat.cs" />
+    <Compile Include="Contato.xaml.cs" />
+    <Compile Include="BackEnd\BancodeDados.cs" />
+    <Compile Include="BatePapo.xaml.cs" />
+    <Compile Include="DesignVaga.xaml.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Mensagem_L.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mensagem_R.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SemVagas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TBatePapo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TCadastrarUsuarioAdm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TCadastrarVagaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teste\TesteCadastrarAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teste\TesteImagem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TesteLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Teste\TesteNotificacoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirPerfilAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirPerfilAluno_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirPerfilEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirPerfilEmpresa_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirUsuários.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TExibirVagaFinalizada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TFormAlunoCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TFormCurriculoAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TFormEmpresaCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TFormInfoEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TGerarSenhaADM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="THistoricoVagasEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TMenuAdministrador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TMenuAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TMenuCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TMenuEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TMinhasInscricoesAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TPerfilAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TPerfilEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TPesquisarAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TSolicitacoesVagasCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagaCompletaAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagaCompletaCoordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagaCompletaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagasEmAberto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagasEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagasFinalizadasEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TVagasPendentesEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VagaCompleta_Coordenador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackEnd\Mensagem.cs" />
+    <Compile Include="Mensagem_L.xaml.cs" />
+    <Compile Include="Mensagem_R.xaml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blank-profile-picture-973460_1280-1-705x705.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo-versao-3-ajustada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="mdi_window-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\73027003-bd4d-4c64-8d94-2fcf04792ed6.png" />
+    <Resource Include="Imagens\dd839fb9-4ecd-4e6a-a424-1f07c4c32811.png" />
+    <Resource Include="Imagens\f7b6822a-38f7-4974-bb0f-acda7e4b1916.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\icon analisar.png" />
+    <Resource Include="Icones\icon cad_usuarios.png" />
+    <Resource Include="Icones\icon inscricoes.png" />
+    <Resource Include="Icones\icon logout .png" />
+    <Resource Include="Icones\icon menu bar 2.png" />
+    <Resource Include="Icones\icon menu bar.png" />
+    <Resource Include="Icones\icon notifications 2.png" />
+    <Resource Include="Icones\icon perfil.png" />
+    <Resource Include="Icones\icon search.png" />
+    <Resource Include="Icones\icon usuarios.png" />
+    <Resource Include="Icones\icon vagas.png" />
+    <Resource Include="Icones\icon-jobstack.png" />
+    <Resource Include="Icones\icon_chat.png" />
+    <Resource Include="Icones\logo-versao-3-ajustada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\job-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\jobstack-logo-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\jobstack-v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\logo-jobstack-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\background-login-of.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\fatec_colorido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\fechar.png" />
+    <Resource Include="Icones\sucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icones\enviar-mensagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo-jobstack-icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

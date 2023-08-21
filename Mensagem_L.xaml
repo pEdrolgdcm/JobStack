@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="JobStack.Mensagem_L"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JobStack"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="200"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Bottom"
+             Margin="20,0,0,0">
+    <Grid>
+        <Grid Margin="0,0,6,0">
+            <Grid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="Black" Opacity="0.2" BlurRadius="5" />
+            </Grid.Effect>
+            <Border x:Name="Borda" Height="50" Width="35" HorizontalAlignment="Left" VerticalAlignment="Bottom" CornerRadius="10" Margin="0,0,6,8">
+                <Grid>
+                    <Rectangle x:Name="Msg" Fill="#FF03487C"
+                       Height="35" Width="35"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       RadiusY="10" RadiusX="10">
+                    </Rectangle>
+                    <TextBlock x:Name="Mensagem" 
+                               Text="M" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               FontSize="18" 
+                               FontFamily="Century Gothic" 
+                               MaxWidth="180" 
+                               Foreground="White"
+                               TextWrapping="Wrap"  
+                               Height="Auto" 
+                               Width="Auto">
+
+                    </TextBlock>
+                </Grid>
+
+
+            </Border>
+
+        </Grid>
+
+        <TextBlock x:Name="Data" Text="Data" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="9" Margin="7,0,0,4" FontFamily="Century Gothic">
+
+        </TextBlock>
+
+    </Grid>
+</UserControl>
